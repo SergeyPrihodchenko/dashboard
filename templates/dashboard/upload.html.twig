@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Загрузить файл{% endblock %}
+
+{% block body %}
+<div style="display: flex; flex-direction: column; row-gap: 2em; padding: 1em;">
+    <a href="/downloads/example.csv" download="example.csv" style="text-decoration: none;">Пример файла</a>
+    {{ form_start(form) }}
+    {{ form_end(form) }}
+</div>
+{% endblock %}

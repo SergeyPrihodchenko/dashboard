@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Создать звонки{% endblock %}
+
+{% block body %}
+<turbo-frame>
+    <div id="create-calls">
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+    </div>
+</turbo-frame>
+{% endblock %}

@@ -1,0 +1,22 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+
+    &-container {
+        display: grid;
+
+        width: 100vw;
+        height: 450px;
+
+        background: rgba(242, 221, 198, 1);
+    }
+
+    &-chart { }
+
+    &-button-group {
+        margin: 10px 15px;
+        display: flex;
+        flex-wrap: nowrap;
+        column-gap: 10px;
+    }
+}

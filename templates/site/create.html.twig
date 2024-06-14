@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Создать сайт{% endblock %}
+
+{% block body %}
+
+<turbo-frame>
+    <div id="create-site">
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+    </div>
+</turbo-frame>
+{% endblock %}

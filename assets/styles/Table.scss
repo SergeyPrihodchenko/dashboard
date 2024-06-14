@@ -1,0 +1,35 @@
+.table {
+    display: flex;
+    flex-direction: column;
+    background: white;
+
+    width: 100%;
+
+    &-view {
+        border-spacing: 0;
+        border: 0;
+        width: 100%;
+
+        .plug {
+            width: 200px;
+            border: 0 solid transparent !important;
+        }
+
+        td, th {
+            padding: 4px 0;
+            border: solid .25px rgba(0, 0, 0, .5);
+            border-spacing: 0;
+            text-align: center;
+        }
+    }
+
+    .title {
+        display: flex;
+        margin: 10px 15px;
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    }
+}

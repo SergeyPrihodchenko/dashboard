@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Создание{% endblock %}
+
+{% block body %}
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 2em; margin: 10px 15px;">
+    <div>
+        <h1>Письма</h1>
+        <turbo-frame>
+            <div id="mails-form">
+                {{ form_start(mails_form) }}
+                {{ form_end(mails_form) }}
+            </div>
+        </turbo-frame>
+    </div>
+    <div>
+        <h1>Звонки</h1>
+        <turbo-frame>
+            {{ form_start(calls_form, {'attr' : { 'id' : 'calls-form' } }) }}
+            {{ form_end(calls_form) }}
+        </turbo-frame>
+    </div>
+</div>
+{% endblock %}

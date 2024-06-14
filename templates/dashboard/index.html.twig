@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Панель управления{% endblock %}
+
+{% block body %}
+    <div class="control-panel" {{ stimulus_controller('control') }}>
+        {{ form_start(control_form) }}
+        {{ form_row(control_form.site) }}
+        {{ form_row(control_form.dateStart, { 'attr' : {'value' : date_start } }) }}
+        {{ form_row(control_form.dateEnd, { 'attr' : {'value' : date_end } }) }}
+        {{ form_end(control_form) }}
+    </div>
+    <div class="dashboard" {{ stimulus_controller('chart') }}>
+        <div class="dashboard-container">
+            {{ render_chart(chart, {
+                'id' : 'chart', 'class' : 'dashboard-chart', 'data-chart-target' : 'canvas',
+                'style' : 'position: relative; width: 100%; height: 450px;'
+            })
+            }}
+        </div>
+        <div class="dashboard-button-group">
+            <button data-action="click->chart#defaultZoom">Восстановить зум</button>
+        </div>
+    </div>
+    <div class="table">
+        <div class="title">
+            <a href="{{ site.getHref() }}">{{ site.getName() }}</a>
+        </div>
+        <table class="table-view">
+            <thead>
+                <tr>
+                    <th class="plug"></th>
+                    {% for head in heading %}
+                        <th>{{ head }}</th>
+                    {% endfor %}
+                    <th>Среднее в день</th>
+                    <th>Всего</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="plug mails-text">Письма</td>
+                    {% for mail in mails %}
+                        <td>{{ mail }}</td>
+                    {% endfor %}
+                    <td>{{ total_mails / heading|length }}</td>
+                    <td>{{ total_mails }}</td>
+                </tr>
+                <tr>
+                    <td class="plug calls-text">Звонки</td>
+                    {% for call in calls %}
+                        <td>{{ call }}</td>
+                    {% endfor %}
+                    <td>{{ total_calls / heading|length }}</td>
+                    <td>{{ total_calls }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

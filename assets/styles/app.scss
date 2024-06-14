@@ -1,0 +1,40 @@
+$mails-colour : #0878b4;
+$calls-colour : #b12faf;
+
+body {
+    margin: 0;
+    background: rgba(253, 244, 227, 1);
+}
+
+@import "Chart";
+@import "Control";
+@import "Table";
+
+td, th, input, button, select {
+    font-size: 16px;
+    font-family: 'monospace';
+    font-weight: 400;
+}
+
+input, button, select {
+    padding: 6px 12px;
+    background: white;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, .25);
+    cursor: pointer;
+    transition: .5s;
+}
+
+button:hover {
+    background: rgba(242, 221, 198, 1);
+    border: 1px solid rgba(0, 0, 0, .5);
+}
+
+.mails-text {
+    color: $mails-colour;
+}
+
+.calls-text {
+    color: $calls-colour;
+}
